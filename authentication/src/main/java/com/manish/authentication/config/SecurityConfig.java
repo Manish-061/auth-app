@@ -57,11 +57,11 @@ public class SecurityConfig {
                                 }) // Uses WebMvcConfig
                                 .csrf(csrf -> csrf.disable())
                                 .sessionManagement(session -> session
-                                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                                 .formLogin(form -> form.disable())
                                 .httpBasic(basic -> basic.disable())
                                 .exceptionHandling(
-                                                ex -> ex.authenticationEntryPoint(new RestAuthenticationEntryPoint()))
+                        ex -> ex.authenticationEntryPoint(new RestAuthenticationEntryPoint()))
                                 .authorizeHttpRequests(auth -> auth
                                                 .requestMatchers("/", "/error", "/favicon.ico", "/**/*.png",
                                                                 "/**/*.gif", "/**/*.svg", "/**/*.jpg", "/**/*.html",

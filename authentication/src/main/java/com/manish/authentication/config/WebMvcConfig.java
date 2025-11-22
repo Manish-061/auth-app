@@ -9,9 +9,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOriginPatterns("*") // Allow all origins (use specific URLs in production)
+                .allowedOrigins("http://localhost:5173", "https://auth-app-nine-kappa.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(false);
+                .allowCredentials(true)
+                .maxAge(3600);
     }
 }
